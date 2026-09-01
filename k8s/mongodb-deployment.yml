@@ -34,6 +34,7 @@ spec:
             - name: MONGO_INITDB_ROOT_PASSWORD
               value: root
 
+
           volumeMounts:
             - name: mongo-data
               mountPath: /data/db
