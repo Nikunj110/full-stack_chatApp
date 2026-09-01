@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: backend-deployment
+  nameSpace: chat-app
+
+spec:
+  replicas: 1
+  selector:
+   matchLabels:
+     app: backend
+
+  templates:
+    metadata:
+      name: backend-pod
+      nameSpace: chat-app
+      labels:
+       app: backend
+
+    spec:
+      containers:
+        - name: chatapp-backend
+          image: nikunj07/chatapp-frontend:latest
+          ports:
+            - containerPort: 5001
+
