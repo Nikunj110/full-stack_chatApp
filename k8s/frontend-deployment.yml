@@ -2,28 +2,28 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: backend-deployment
+  name: frontend-deployment
   nameSpace: chat-app
 
 spec:
   replicas: 1
   selector:
    matchLabels:
-     app: backend
+     app: frontend
 
   templates:
     metadata:
-      name: backend-pod
+      name: frontend-pod
       nameSpace: chat-app
       labels:
-       app: backend
+       app: frontend
 
     spec:
       containers:
-        - name: chatapp-backend
+        - name: chatapp-frontend
           image: nikunj07/chatapp-frontend:latest
           ports:
-            - containerPort: 5001 
+            - containerPort: 80 
           
           env:
             - name: NODE_ENV
