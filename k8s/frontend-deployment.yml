@@ -3,29 +3,29 @@ kind: Deployment
 
 metadata:
   name: frontend-deployment
-  nameSpace: chat-app
+  namespace: chat-app
 
 spec:
   replicas: 1
-  selector:
-   matchLabels:
-     app: frontend
 
-  templates:
+  selector:
+    matchLabels:
+      app: frontend
+
+  template:
     metadata:
       name: frontend-pod
-      nameSpace: chat-app
       labels:
-       app: frontend
+        app: frontend
 
     spec:
       containers:
         - name: chatapp-frontend
           image: nikunj07/chatapp-frontend:latest
+
           ports:
-            - containerPort: 80 
-          
+            - containerPort: 80
+
           env:
             - name: NODE_ENV
               value: production
-
