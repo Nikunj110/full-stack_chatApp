@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: chatapp-backend
-          image: nikunj07/chatapp-frontend:latest
+          image: nikunj07/chatapp-backend:latest
 
           ports:
             - containerPort: 5001
