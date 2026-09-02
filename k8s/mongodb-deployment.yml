@@ -35,7 +35,7 @@ spec:
               value: root
 
             - name: GLIBC_TUNABLES
-              value: glibc.pthread.rseq=0
+              value: glibc.pthread.rseq=1
 
           volumeMounts:
             - name: mongo-data
